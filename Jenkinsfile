@@ -111,6 +111,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                       sh 'echo $PATH'
                     def commitHash = sh(script: "git rev-parse --short HEAD", returnStdout: true).trim()
                     def imageTag = "${DOCKERHUB_USER}/${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
                     def commitTag = "${DOCKERHUB_USER}/${DOCKERHUB_REPO}:${commitHash}"
