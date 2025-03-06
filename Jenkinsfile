@@ -72,8 +72,10 @@ pipeline {
         PATH = "/opt/homebrew/bin:${MAVEN_HOME}/bin:${env.PATH}"
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials'
         DOCKERHUB_REPO = 'mahnoor95/tripcalculator'
-        DOCKER_IMAGE_TAG = 'latest'
+        DOCKER_IMAGE_TAG = 'latest_v1'
         DOCKERHUB_USER = 'mahnoor95' // Define the Docker Hub user
+
+
     }
     stages {
         stage('Checkout') {
