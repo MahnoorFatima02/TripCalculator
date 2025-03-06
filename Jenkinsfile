@@ -2,7 +2,8 @@ pipeline {
     agent any
      environment {
             MAVEN_HOME = '/opt/homebrew/Cellar/maven/3.9.9/libexec'
-             PATH = "${MAVEN_HOME}/bin:${env.PATH}"
+//              PATH = "${MAVEN_HOME}/bin:${env.PATH}"
+            PATH = "/opt/homebrew/bin:${MAVEN_HOME}/bin:${env.PATH}"
              DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials'
              DOCKERHUB_REPO = 'mahnoor95/tripcalculator'
              DOCKER_IMAGE_TAG = 'latest'
@@ -10,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/ADirin/SEP1_Week7_Spring2025_Inclass_solution.git'
+                git 'git@github.com:MahnoorFatima02/TripCalculator.git'
             }
         }
         stage('Build') {
