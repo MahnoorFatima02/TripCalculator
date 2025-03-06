@@ -6,7 +6,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS_ID = 'Docker_hub'
         DOCKERHUB_REPO = 'tripcalculator'
         DOCKER_IMAGE_TAG = 'latest_v1'
-        DOCKERHUB_USER = 'mahnoor95' // Define the Docker Hub user
+        DOCKERHUB_USER = 'mahnoor95'
     }
     stages {
         stage('Checkout') {
@@ -60,9 +60,6 @@ pipeline {
 
                         // Push Docker image to Docker Hub
                         sh "/usr/local/bin/docker push ${imageTag}"
-                        // Push Docker images to Docker Hub
-//                         sh "/usr/local/bin/docker push ${DOCKER_IMAGE_TAG}"
-//                         sh "/usr/local/bin/docker push ${commitTag}"
                     }
                 }
             }
