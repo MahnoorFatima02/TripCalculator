@@ -114,8 +114,8 @@ pipeline {
                     def commitTag = "${DOCKERHUB_USER}/${DOCKERHUB_REPO}:${commitHash}"
 
 //                     sh "/usr/local/bin/docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_CREDENTIALS_ID}"
-                    sh "/usr/local/bin/docker push ${imageTag}"
-                    sh "/usr/local/bin/docker push ${commitTag}"
+//                     sh "/usr/local/bin/docker push"
+                    sh "/usr/local/bin/docker push"
                 }
             }
         }
