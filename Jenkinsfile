@@ -112,7 +112,10 @@ pipeline {
                     def commitHash = sh(script: "git rev-parse --short HEAD", returnStdout: true).trim()
                     def imageTag = "${DOCKERHUB_USER}/${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
                     def commitTag = "${DOCKERHUB_USER}/${DOCKERHUB_REPO}:${commitHash}"
-                    sh "/opt/homebrew/bin/docker build -t ${imageTag} -t ${commitTag} ."
+
+                    sh "/usr/local/bin/docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_CREDENTIALS_ID}"
+                    sh "/usr/local/bin/docker push ${imageTag}"
+                    sh "/usr/local/bin/docker push ${commitTag}"
                 }
             }
         }
