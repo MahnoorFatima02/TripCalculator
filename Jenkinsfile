@@ -116,7 +116,7 @@ pipeline {
                     def imageTag = "${DOCKERHUB_USER}/${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
                     def commitTag = "${DOCKERHUB_USER}/${DOCKERHUB_REPO}:${commitHash}"
 
-//                     sh "/usr/local/bin/docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_CREDENTIALS_ID}"
+                    sh "/usr/local/bin/docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_CREDENTIALS_ID}"
 //                     sh "/usr/local/bin/docker push"
                     sh "/usr/local/bin/docker build -t ${imageTag} -t ${commitTag} ."
                 }
