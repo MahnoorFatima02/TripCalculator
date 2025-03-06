@@ -56,12 +56,12 @@ pipeline {
                         sh "/usr/local/bin/docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}"
 
                         // Construct the full image tag
-//                         def imageTag = "${DOCKERHUB_USER}/${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
+                        def imageTag = "${DOCKERHUB_USER}/${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
 
                         // Push Docker image to Docker Hub
-//                         sh "/usr/local/bin/docker push ${imageTag}"
+                        sh "/usr/local/bin/docker push ${imageTag}"
                         // Push Docker images to Docker Hub
-                        sh "/usr/local/bin/docker push ${DOCKER_IMAGE_TAG}"
+//                         sh "/usr/local/bin/docker push ${DOCKER_IMAGE_TAG}"
 //                         sh "/usr/local/bin/docker push ${commitTag}"
                     }
                 }
