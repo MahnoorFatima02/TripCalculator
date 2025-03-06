@@ -89,7 +89,7 @@ pipeline {
         MAVEN_HOME = '/opt/homebrew/Cellar/maven/3.9.9/libexec'
         PATH = "/opt/homebrew/bin:${MAVEN_HOME}/bin:${env.PATH}"
         DOCKERHUB_CREDENTIALS_ID = 'Docker_hub'
-        DOCKERHUB_REPO = 'mahnoor95/tripcalculator'
+        DOCKERHUB_REPO = 'tripcalculator'
         DOCKER_IMAGE_TAG = 'latest_v1'
         DOCKERHUB_USER = 'mahnoor95' // Define the Docker Hub user
     }
